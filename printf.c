@@ -42,6 +42,29 @@ putchar('%');
 return (1);
 }
 /**
+ * print_integer - Print an integer
+ * @arg: The integer to print
+ * Return: The number of characters printed
+ */
+int print_integer(va_list arg)
+{
+int n = va_arg(arg, int);
+char buffer[12];
+int len;
+itoa(n, buffer, 10);
+len = print_string(buffer);
+return (len);
+}
+/**
+ * print_decimal - Print a decimal integer
+ * @arg: The integer to print
+ * Return: The number of characters printed
+ */
+int print_decimal(va_list arg)
+{
+return (print_integer(arg));
+}
+/**
  * _printf - Prints a formatted string to stdout
  * @format: The format string to print
  * Return: The number of characters printed
